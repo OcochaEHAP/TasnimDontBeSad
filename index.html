@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>For Tasnim - Don't Be Sad</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Arial', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #fef6e4 0%, #f3d2c1 100%);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 600px;
+      width: 100%;
+      background: white;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      text-align: center;
+    }
+
+    .header {
+      background: linear-gradient(135deg, #f582ae 0%, #8bd3dd 100%);
+      padding: 40px 20px;
+      color: white;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+
+    .name {
+      font-size: 3rem;
+      color: #001858;
+      display: block;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+
+    .heart {
+      color: #f582ae;
+      animation: heartbeat 1.5s infinite;
+      font-size: 2.5rem;
+      margin: 0 10px;
+    }
+
+    @keyframes heartbeat {
+      0% {
+        transform: scale(1);
+      }
+
+      50% {
+        transform: scale(1.2);
+      }
+
+      100% {
+        transform: scale(1);
+      }
+    }
+
+    .main-message {
+      padding: 40px 30px;
+      font-size: 1.2rem;
+      line-height: 1.6;
+      color: #172c66;
+    }
+
+    .message-box {
+      background: #fef6e4;
+      border-radius: 15px;
+      padding: 25px;
+      margin: 20px 0;
+      border-left: 5px solid #f582ae;
+    }
+
+    .message-box h3 {
+      color: #f582ae;
+      margin-bottom: 15px;
+      font-size: 1.4rem;
+    }
+
+    .message-box p {
+      margin-bottom: 10px;
+    }
+
+    .affirmation {
+      background: #8bd3dd;
+      color: white;
+      padding: 15px;
+      border-radius: 10px;
+      margin: 15px 0;
+      font-size: 1.1rem;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin: 30px 0;
+      flex-wrap: wrap;
+    }
+
+    button {
+      background: #f582ae;
+      color: white;
+      border: none;
+      padding: 12px 25px;
+      border-radius: 50px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    button:hover {
+      background: #001858;
+      transform: translateY(-3px);
+    }
+
+    .footer {
+      background: #001858;
+      color: white;
+      padding: 20px;
+      font-size: 0.9rem;
+    }
+
+    .sun {
+      font-size: 3rem;
+      color: #f9bc60;
+      margin: 20px 0;
+      animation: spin 10s linear infinite;
+    }
+
+    @keyframes spin {
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    .message-display {
+      min-height: 60px;
+      margin: 20px 0;
+      padding: 15px;
+      background: #f3d2c1;
+      border-radius: 10px;
+      font-size: 1.1rem;
+      color: #172c66;
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 2rem;
+      }
+
+      .name {
+        font-size: 2.5rem;
+      }
+
+      .main-message {
+        padding: 30px 20px;
+      }
+
+      .buttons {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      button {
+        width: 80%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>For <span class="name">Tasnim</span></h1>
+      <div class="sun">☀️</div>
+      <h2>Don't Be Sad <span class="heart">❤️</span></h2>
+    </div>
+
+    <div class="main-message">
+      <div class="message-box">
+        <h3>Salut Tasnim,</h3>
+        
+        <p>Je sais que tu as peut-être l'impression d'avoir du mal à traverser cette période difficile, mais souviens-toi que ce
+          sentiment est passager.</p>
+        
+        <p>Tu es forte, tu es aimée, et des jours meilleurs arrivent.</p>
+      </div>
+
+      <div class="affirmation">
+        « Cela aussi passera. Tu as déjà surmonté des épreuves difficiles, et tu le feras encore. »
+
+      </div>
+
+
+    <div class="footer">
+      <p>Made with care for Tasnim • By, OKOCHA</p>
+    </div>
+  </div>
+
+  <script>
+    const messages = {
+      kind: "Your kindness makes the world a better place. Never doubt that.",
+      strong: "You are stronger than you realize. Look at all you've overcome already!",
+      loved: "You are loved more than you know. People care about you deeply.",
+      tomorrow: "Every sunrise brings a new beginning. Tomorrow is a fresh start.",
+      smile: "Your smile can light up a room. Don't forget to share it with the world.",
+      breath: "Take a deep breath. Inhale peace, exhale worries. You're doing great."
+    };
+
+    function showMessage(type) {
+      const display = document.getElementById('messageDisplay');
+      display.textContent = messages[type];
+      display.style.background = "#8bd3dd";
+      display.style.color = "white";
+
+      // Reset color after 2 seconds
+      setTimeout(() => {
+        display.style.background = "#f3d2c1";
+        display.style.color = "#172c66";
+      }, 2000);
+    }
+
+    function sendHug() {
+      const display = document.getElementById('messageDisplay');
+      display.innerHTML = "Sending you a warm virtual hug! 🤗<br>You're not alone.";
+      display.style.background = "#f582ae";
+      display.style.color = "white";
+
+      // Create floating hearts
+      for (let i = 0; i < 10; i++) {
+        createHeart();
+      }
+
+      // Reset color after 2 seconds
+      setTimeout(() => {
+        display.style.background = "#f3d2c1";
+        display.style.color = "#172c66";
+        display.innerHTML = "Click the buttons above for encouragement";
+      }, 3000);
+    }
+
+    function createHeart() {
+      const heart = document.createElement('div');
+      heart.innerHTML = '❤️';
+      heart.style.position = 'fixed';
+      heart.style.fontSize = '20px';
+      heart.style.color = '#f582ae';
+      heart.style.left = Math.random() * 100 + 'vw';
+      heart.style.top = '80vh';
+      heart.style.zIndex = '9999';
+      heart.style.pointerEvents = 'none';
+
+      document.body.appendChild(heart);
+
+      // Animate the heart
+      const animation = heart.animate([
+        { transform: 'translateY(0) scale(1)', opacity: 1 },
+        { transform: `translateY(-${Math.random() * 200 + 100}px) translateX(${Math.random() * 100 - 50}px) scale(0.5)`, opacity: 0 }
+      ], {
+        duration: 1500 + Math.random() * 1000,
+        easing: 'cubic-bezier(0.215, 0.610, 0.355, 1)'
+      });
+
+      // Remove heart after animation
+      animation.onfinish = () => heart.remove();
+    }
+
+    // Show a random message every 10 seconds
+    setInterval(() => {
+      const messageKeys = Object.keys(messages);
+      const randomKey = messageKeys[Math.floor(Math.random() * messageKeys.length)];
+      showMessage(randomKey);
+    }, 10000);
+  </script>
+</body>
+
+</html>
